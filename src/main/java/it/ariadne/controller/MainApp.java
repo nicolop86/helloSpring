@@ -11,7 +11,8 @@ public class MainApp {
 		
 		// Creating a Context Application object by reading
        // the configuration of the 'AppConfiguration' class.
-       ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationContextConfig.class);
+       @SuppressWarnings("resource")
+	ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationContextConfig.class);
  
        System.out.println("----------");
        Language language = (Language) context.getBean("language");

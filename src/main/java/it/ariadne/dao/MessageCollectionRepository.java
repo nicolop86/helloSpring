@@ -29,7 +29,6 @@ public class MessageCollectionRepository implements MessageRepository {
 
 	@Override
 	public List<Message> queryRowMapper() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

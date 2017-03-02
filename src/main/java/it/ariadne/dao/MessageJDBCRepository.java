@@ -27,7 +27,7 @@ public class MessageJDBCRepository extends JdbcDaoSupport implements MessageRepo
 	private DataSource dataSource;
 
 	/*Per questo repository faccio autowiring del dataSource e lo attacco a questo
-	 * message repository; il metodo setDataSource è mutuato da JdbcDaoSupport*/
+	 * message repository; il metodo setDataSource ï¿½ mutuato da JdbcDaoSupport*/
 	@PostConstruct
 	private void initialize(){
 		setDataSource(dataSource);
@@ -101,7 +101,8 @@ public class MessageJDBCRepository extends JdbcDaoSupport implements MessageRepo
 		
 		List<Message> messages = new ArrayList<>();
 		for (Map<String, Object> record : map) {
-				Message m = new Message((String)record.get("text"), new Date(), ((Integer)record.get("idmessages")).longValue(), (String)record.get("author"));
+				Message m = new Message((String)record.get("text"), new Date(),
+						((Integer)record.get("idmessages")).longValue(), (String)record.get("author"));
 				messages.add(m);
 				System.out.println(record.get("text") + " " + record.get("idmessages") + " " + record.get("author"));
 		}
